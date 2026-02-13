@@ -2,7 +2,7 @@
 
 A small clone of the classic Asteroids game built with Python and Pygame.
 
-This is my second guided project on boot.dev[boot.dev] (Backend Developer Path).
+This is my second guided project on [boot.dev](https://www.boot.dev).
 
 About
 -----
