@@ -12,20 +12,24 @@ def main():
     print(f"Starting Asteroids with pygame version: {pygame.version.ver}")
     print("Screen width:", SCREEN_WIDTH)
     print("Screen height:", SCREEN_HEIGHT)
+
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0
 
     x = SCREEN_WIDTH / 2
     y = SCREEN_HEIGHT / 2
+
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()
     shots = pygame.sprite.Group()
+
     Asteroid.containers = (asteroids, updatable, drawable)
     Player.containers = (updatable, drawable)
     AsteroidField.containers = (updatable,)
     asteroidfield = AsteroidField()
+
     Shot.containers =(shots, drawable, updatable) 
     player = Player(x, y)
 
@@ -36,6 +40,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        # limit the framerate to 60 FPS
         dt = clock.tick(60) / 1000
         updatable.update(dt)
         screen.fill("black")
@@ -59,8 +64,6 @@ def main():
         pygame.display.flip()
         
         
-
-
 
 
 if __name__ == "__main__":
